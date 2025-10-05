@@ -10,10 +10,13 @@ function App() {
       <div className="h-screen flex flex-col bg-black">
         <Header />
 
-        <main className="flex-1 flex gap-4 p-4 overflow-hidden">
+        <main className="flex-1 flex flex-col md:flex-row gap-4 p-4 overflow-hidden">
           <Sidebar />
-          <MapView />
-          <DataPanel />
+
+          <div className="flex-1 flex flex-col lg:flex-row gap-4 overflow-hidden">
+            <MapView />
+            <DataPanel />
+          </div>
         </main>
       </div>
     </AppProvider>

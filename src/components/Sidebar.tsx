@@ -18,7 +18,7 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="flex flex-col gap-2 w-28">
+    <aside className="flex flex-row md:flex-col gap-2 w-full md:w-28 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0">
       {categories.map((category) => (
         <button
           key={category.value}
@@ -29,6 +29,8 @@ export default function Sidebar() {
             text-center
             border-2
             transition-all duration-200
+            whitespace-nowrap
+            flex-shrink-0 md:flex-shrink
             ${selectedCategory === category.value
               ? 'bg-cyan-400 text-black border-cyan-400'
               : 'bg-transparent text-cyan-400 border-cyan-400 hover:bg-cyan-400/10'

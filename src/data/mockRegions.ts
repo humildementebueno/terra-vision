@@ -14,6 +14,9 @@ export const mockRegions: Region[] = [
         status: 'warning',
         description: 'Deforestación detectada en los últimos 30 días',
         lastUpdate: '2025-10-04',
+        narrative: 'El satélite Terra, mediante su instrumento MODIS, mide la salud de la vegetación usando el índice NDVI (Normalized Difference Vegetation Index). Un valor de 0.72 indica bosque denso y saludable, aunque la tendencia descendente del 3.2% mensual sugiere deforestación activa. En los últimos 25 años, esta región del Amazonas ha perdido aproximadamente 1,250 km² de bosque, equivalente a 175,000 campos de fútbol. Esta pérdida de cobertura vegetal afecta el ciclo del agua, la biodiversidad y el almacenamiento de carbono.',
+        instrument: 'MODIS',
+        trend: 'decreasing',
         metrics: [
           { label: 'Área deforestada', value: '1,250 km²' },
           { label: 'Cobertura vegetal', value: '82%' },
@@ -26,6 +29,9 @@ export const mockRegions: Region[] = [
         status: 'critical',
         description: 'Alta actividad de incendios forestales',
         lastUpdate: '2025-10-04',
+        narrative: 'Terra detecta incendios activos mediante sensores térmicos en el instrumento MODIS, que identifica anomalías de temperatura en la superficie terrestre. Los 47 focos activos representan un aumento del 35% comparado con el promedio histórico para esta época. El área afectada de 3,800 hectáreas genera grandes cantidades de humo que impactan la calidad del aire en un radio de hasta 200 km. Estos incendios, principalmente de origen humano para limpieza de terrenos, liberan CO₂ almacenado durante décadas y destruyen hábitats críticos.',
+        instrument: 'MODIS',
+        trend: 'increasing',
         metrics: [
           { label: 'Focos activos', value: '47' },
           { label: 'Área afectada', value: '3,800 ha' },
@@ -38,6 +44,9 @@ export const mockRegions: Region[] = [
         status: 'warning',
         description: 'Humo de incendios afectando la calidad del aire',
         lastUpdate: '2025-10-04',
+        narrative: 'El instrumento MISR de Terra observa la atmósfera desde múltiples ángulos para medir aerosoles y partículas en suspensión. Los niveles de PM2.5 (partículas menores a 2.5 micrómetros) están en 45 µg/m³, superando los límites recomendados por la OMS. Estas partículas, principalmente provenientes del humo de incendios forestales cercanos, pueden penetrar profundamente en los pulmones y afectar la salud respiratoria. La visibilidad reducida a 8 km confirma la presencia significativa de aerosoles en la atmósfera.',
+        instrument: 'MISR',
+        trend: 'stable',
         metrics: [
           { label: 'PM2.5', value: '45 µg/m³' },
           { label: 'CO₂', value: '420 ppm' },
@@ -59,6 +68,9 @@ export const mockRegions: Region[] = [
         status: 'critical',
         description: 'Inundaciones severas en áreas urbanas',
         lastUpdate: '2025-10-04',
+        narrative: 'Las imágenes satelitales de MODIS permiten detectar áreas inundadas mediante el contraste entre agua y tierra. Puerto Alegre experimenta inundaciones críticas con el nivel del río alcanzando 5.2 metros, superando ampliamente el nivel de alerta. Las precipitaciones extraordinarias de 180 mm en 24 horas han resultado en 280 km² de área inundada, afectando aproximadamente 150,000 personas. El cambio climático está incrementando la frecuencia e intensidad de eventos extremos como este en la región.',
+        instrument: 'MODIS',
+        trend: 'increasing',
         metrics: [
           { label: 'Nivel del río', value: '5.2 m' },
           { label: 'Área inundada', value: '280 km²' },
@@ -71,6 +83,9 @@ export const mockRegions: Region[] = [
         status: 'normal',
         description: 'Alta humedad por precipitaciones',
         lastUpdate: '2025-10-04',
+        narrative: 'El sistema de observación de nubes y radiación CERES en Terra mide el balance de energía y humedad atmosférica. La humedad relativa del 95% es consecuencia de las intensas precipitaciones que han afectado la región. Esta alta humedad, combinada con temperaturas moderadas de 18°C, genera condiciones de saturación atmosférica. Los 180 mm de lluvia en 24 horas representan casi el doble del promedio mensual, evidenciando un evento meteorológico extraordinario.',
+        instrument: 'CERES',
+        trend: 'stable',
         metrics: [
           { label: 'Humedad', value: '95%' },
           { label: 'Precipitación 24h', value: '180 mm' },
@@ -92,6 +107,9 @@ export const mockRegions: Region[] = [
         status: 'warning',
         description: 'Aumento de actividad sísmica detectada',
         lastUpdate: '2025-10-04',
+        narrative: 'El instrumento ASTER de Terra es especialmente útil para monitorear volcanes mediante imágenes térmicas de alta resolución. El Cotopaxi muestra actividad moderada con 23 sismos diarios y emisiones de SO₂ de 850 toneladas por día, indicadores de magma en movimiento bajo la superficie. Aunque el nivel de alerta amarillo no implica erupción inminente, este aumento de actividad requiere vigilancia constante. Los sensores térmicos detectan una anomalía de +2°C en el cráter, confirmando el incremento en la actividad volcánica.',
+        instrument: 'ASTER',
+        trend: 'increasing',
         metrics: [
           { label: 'Sismos/día', value: '23' },
           { label: 'Emisión SO₂', value: '850 ton/día' },
@@ -104,6 +122,9 @@ export const mockRegions: Region[] = [
         status: 'normal',
         description: 'Temperatura normal para la altitud',
         lastUpdate: '2025-10-04',
+        narrative: 'ASTER mide la temperatura superficial con precisión usando bandas espectrales en el infrarrojo térmico. A 5,897 metros de altitud, el Cotopaxi registra 12°C en su superficie externa, típico para esta elevación. Sin embargo, el cráter muestra 45°C, evidencia de actividad geotérmica activa. La anomalía térmica de +2°C sobre el promedio histórico sugiere un ligero incremento en el flujo de calor desde el interior del volcán, consistente con el aumento de actividad sísmica reportado.',
+        instrument: 'ASTER',
+        trend: 'increasing',
         metrics: [
           { label: 'Temp. superficie', value: '12°C' },
           { label: 'Temp. cráter', value: '45°C' },
@@ -125,6 +146,9 @@ export const mockRegions: Region[] = [
         status: 'warning',
         description: 'Temperatura superior al promedio histórico',
         lastUpdate: '2025-10-04',
+        narrative: 'Los datos de temperatura superficial de MODIS revelan una anomalía significativa en la Patagonia. La temperatura actual de 15°C supera en 3.5°C el promedio histórico de 11.5°C para esta época del año. Este calentamiento acelerado es especialmente preocupante en regiones glaciares, donde cada grado adicional acelera el derretimiento del hielo. A lo largo de 25 años de observaciones de Terra, esta región muestra una de las tasas de calentamiento más pronunciadas del hemisferio sur, con implicaciones directas para los recursos hídricos de millones de personas.',
+        instrument: 'MODIS',
+        trend: 'increasing',
         metrics: [
           { label: 'Temp. actual', value: '15°C' },
           { label: 'Promedio histórico', value: '11.5°C' },
@@ -137,6 +161,9 @@ export const mockRegions: Region[] = [
         status: 'warning',
         description: 'Retroceso glaciar acelerado',
         lastUpdate: '2025-10-04',
+        narrative: 'Mediante imágenes multitemporales de ASTER, Terra documenta el dramático retroceso de los glaciares patagónicos. La pérdida del 8% del área glaciar en un solo año es alarmante: los glaciares que tomaron milenios en formarse están desapareciendo en décadas. Los 16,800 km² de hielo restantes retroceden a un promedio de 15 metros por año. Este hielo glaciar es fundamental para el suministro de agua dulce en verano. Su desaparición no solo afecta ecosistemas locales, sino que contribuye al aumento del nivel del mar global.',
+        instrument: 'ASTER',
+        trend: 'decreasing',
         metrics: [
           { label: 'Área glaciar', value: '16,800 km²' },
           { label: 'Pérdida anual', value: '-8%' },
@@ -158,6 +185,9 @@ export const mockRegions: Region[] = [
         status: 'critical',
         description: 'Altos niveles de contaminación atmosférica',
         lastUpdate: '2025-10-04',
+        narrative: 'MISR detecta aerosoles y contaminantes atmosféricos observando desde múltiples ángulos. La Ciudad de México muestra niveles críticos de contaminación con PM10 en 156 µg/m³, más del triple del límite recomendado por la OMS. El Índice de Calidad del Aire (AQI) de 165 indica condiciones "no saludables" que afectan especialmente a grupos sensibles. Los niveles elevados de ozono (0.095 ppm) resultan de reacciones fotoquímicas entre contaminantes vehiculares e industriales bajo intensa radiación solar, un patrón recurrente en megaciudades ubicadas en valles de gran altitud.',
+        instrument: 'MISR',
+        trend: 'stable',
         metrics: [
           { label: 'PM10', value: '156 µg/m³' },
           { label: 'Ozono', value: '0.095 ppm' },
@@ -170,6 +200,9 @@ export const mockRegions: Region[] = [
         status: 'warning',
         description: 'Temperatura urbana significativamente mayor',
         lastUpdate: '2025-10-04',
+        narrative: 'Las observaciones térmicas de ASTER revelan un intenso efecto de isla de calor urbano en la Ciudad de México. La temperatura en zonas urbanas alcanza 26°C, 6°C más que las áreas rurales circundantes (20°C). Este fenómeno resulta de superficies de concreto y asfalto que absorben y retienen calor, escasez de vegetación, y el calor residual de actividades humanas. A lo largo de 25 años, Terra ha documentado cómo este efecto se intensifica con la expansión urbana, aumentando el consumo energético para enfriamiento y afectando la salud pública durante olas de calor.',
+        instrument: 'ASTER',
+        trend: 'increasing',
         metrics: [
           { label: 'Temp. urbana', value: '26°C' },
           { label: 'Temp. rural', value: '20°C' },
@@ -191,6 +224,9 @@ export const mockRegions: Region[] = [
         status: 'warning',
         description: 'Múltiples incendios forestales activos',
         lastUpdate: '2025-10-04',
+        narrative: 'MODIS detecta incendios forestales mediante sensores térmicos que identifican puntos calientes (hotspots) en la superficie terrestre. La Región del Bío-Bío enfrenta 12 focos activos que han consumido 8,500 hectáreas de bosque nativo y plantaciones. Los vientos de 35 km/h complican las labores de control y aumentan el riesgo de propagación. Los datos históricos de Terra muestran que la frecuencia de incendios en Chile central ha aumentado significativamente en las últimas dos décadas, correlacionado con veranos más secos y prolongados debido al cambio climático.',
+        instrument: 'MODIS',
+        trend: 'increasing',
         metrics: [
           { label: 'Focos activos', value: '12' },
           { label: 'Hectáreas quemadas', value: '8,500 ha' },
@@ -203,6 +239,9 @@ export const mockRegions: Region[] = [
         status: 'normal',
         description: 'Cobertura forestal en estado normal',
         lastUpdate: '2025-10-04',
+        narrative: 'El NDVI medido por MODIS evalúa la densidad y salud de la cobertura vegetal. Un valor de 0.65 indica bosques moderadamente densos en condiciones normales para esta región templada de Chile. Los 12,400 km² de área forestal incluyen tanto bosque nativo como plantaciones comerciales de pino y eucalipto. La leve disminución del 1.2% anual refleja principalmente actividad forestal controlada y conversión gradual a uso agrícola. A pesar de los incendios recurrentes, la región mantiene una recuperación vegetativa relativamente estable gracias a las precipitaciones invernales.',
+        instrument: 'MODIS',
+        trend: 'stable',
         metrics: [
           { label: 'NDVI', value: '0.65' },
           { label: 'Área forestal', value: '12,400 km²' },
