@@ -1,5 +1,5 @@
 import { useApp } from '../context/AppContext';
-import { Category } from '../types';
+import type { Category } from '../types';
 
 const categories: { label: string; value: Category }[] = [
   { label: "Atmósfera", value: "atmosphere" },

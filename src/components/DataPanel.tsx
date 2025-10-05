@@ -1,5 +1,5 @@
 import { useApp } from '../context/AppContext';
-import { RegionData } from '../types';
+import type { RegionData } from '../types';
 import LoadingSpinner from './LoadingSpinner';
 
 const getStatusColor = (status: RegionData['status']) => {

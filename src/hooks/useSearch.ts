@@ -1,5 +1,4 @@
 import { useState, useMemo } from 'react';
-import { Region } from '../types';
 import { mockRegions } from '../data/mockRegions';
 
 export function useSearch() {

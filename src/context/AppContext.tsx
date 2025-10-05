@@ -1,5 +1,6 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
-import { Region, Category } from '../types';
+import { createContext, useContext, useState } from 'react';
+import type { ReactNode } from 'react';
+import type { Region, Category } from '../types';
 
 interface AppContextType {
   selectedRegion: Region | null;
