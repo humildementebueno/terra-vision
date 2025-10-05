@@ -1,22 +1,25 @@
 import { useApp } from '../context/AppContext';
 import GlobeIcon from './icons/GlobeIcon';
+import LoadingOverlay from './LoadingOverlay';
 
 export default function MapView() {
-  const { selectedRegion } = useApp();
+  const { selectedRegion, isLoadingRegion } = useApp();
 
   return (
-    <div className="flex-1 bg-gray-800 rounded-3xl overflow-hidden relative border-2 border-gray-600">
+    <div className="flex-1 bg-gray-800 rounded-3xl overflow-hidden relative border-2 border-gray-600 transition-all duration-300">
+      {isLoadingRegion && <LoadingOverlay message="Cargando imagen satelital..." />}
+
       {selectedRegion ? (
         <>
           {/* Satellite Image */}
           <img
             src={selectedRegion.imageUrl}
             alt={`${selectedRegion.name}, ${selectedRegion.country}`}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover animate-fadeIn"
           />
 
           {/* Overlay with region info */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 animate-slideUp">
             <h3 className="text-xl font-bold text-white mb-1">{selectedRegion.name}</h3>
             <p className="text-cyan-400 text-sm">{selectedRegion.country}</p>
             <p className="text-gray-300 text-xs mt-2">

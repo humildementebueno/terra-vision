@@ -1,5 +1,6 @@
 import { useApp } from '../context/AppContext';
 import { RegionData } from '../types';
+import LoadingSpinner from './LoadingSpinner';
 
 const getStatusColor = (status: RegionData['status']) => {
   switch (status) {
@@ -15,7 +16,7 @@ const getStatusColor = (status: RegionData['status']) => {
 };
 
 export default function DataPanel() {
-  const { selectedRegion, selectedCategory } = useApp();
+  const { selectedRegion, selectedCategory, isLoadingData } = useApp();
 
   const getCurrentData = (): RegionData | null => {
     if (!selectedRegion || !selectedCategory) return null;
@@ -25,12 +26,21 @@ export default function DataPanel() {
   const currentData = getCurrentData();
 
   return (
-    <div className="w-72 bg-cyan-600 rounded-3xl p-5">
+    <div className="w-72 bg-cyan-600 rounded-3xl p-5 transition-all duration-300">
       <h2 className="text-lg font-bold text-white mb-4">Datos</h2>
 
-      <div className="bg-cyan-500/30 rounded-2xl p-5 min-h-[500px]">
+      <div className="bg-cyan-500/30 rounded-2xl p-5 min-h-[500px] relative">
+        {isLoadingData && (
+          <div className="absolute inset-0 bg-cyan-600/50 backdrop-blur-sm rounded-2xl flex items-center justify-center z-10">
+            <div className="text-center">
+              <LoadingSpinner size="md" />
+              <p className="text-white text-xs mt-3 animate-pulse">Obteniendo datos...</p>
+            </div>
+          </div>
+        )}
+
         {currentData ? (
-          <div className="space-y-4">
+          <div className="space-y-4 animate-fadeIn">
             {/* Status Indicator */}
             <div className="flex items-center gap-2 mb-4">
               <div className={`w-3 h-3 rounded-full ${getStatusColor(currentData.status)}`}></div>

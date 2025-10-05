@@ -35,7 +35,7 @@ export default function Header() {
     <header className="bg-blue-600 px-6 py-3">
       <div className="flex items-center gap-6">
         <h1 className="text-2xl font-bold text-white">
-          NARRATERRA
+          TERRA-VISION
         </h1>
 
         <div className="flex-1 max-w-3xl relative" ref={dropdownRef}>
@@ -53,7 +53,7 @@ export default function Header() {
 
           {/* Dropdown */}
           {isOpen && filteredRegions.length > 0 && (
-            <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-cyan-400/30 rounded-lg shadow-xl overflow-hidden z-50">
+            <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-cyan-400/30 rounded-lg shadow-xl overflow-hidden z-50 animate-slideDown">
               {filteredRegions.map((region) => (
                 <button
                   key={region.id}
